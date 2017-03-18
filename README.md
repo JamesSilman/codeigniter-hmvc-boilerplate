@@ -3,21 +3,34 @@ An example of the codeigniter framework using the HMVC methodology.
 
 ## What the heck is this?
 This is a very basic implementation of HMVC using the *codeigniter* framework and *wiredesignz* modular extension.
-You can find the *codeigniter* framework here: https://codeigniter.com/
-You can find the *wiredesignz* modular extension here: https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc
+You can find the *codeigniter* framework [here:](https://codeigniter.com/)
+You can find the *wiredesignz* modular extension [here:](https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc)
 
-## Examples
-coming soon...
+## Example Modules
+
+### Example One - /application/modules/example_one
+This example demonstrates how to call a view from within a controller using the *wiredesignz* HMVC extension as well as a view from another module located at: */applicatiion/modules/example_one/controllers/example_one.php*
+
+### Example Three - /application/modules/example_three
+This example demonstrates how to load a module from within a view using the *wiredesignz* HMVC extension located at: */applicatiion/modules/example_three/views/view_example_three.php*
 
 ## Changes
 Below is a list of changes that have been made to the *codeigniter* framework to enable you to use HMVC.
 
 ### application/core/config.php
+Updated the *base_url* to localhost. If your domain is different you will need to change this. 
+
+	$config['base_url'] = '';
+	
+to:
+
+	$config['base_url'] = 'http://localhost/';
+
 Updated the below configuration, this changes your site from this: http://localhost/index.php?home, to this: http://localhost/home
 
 	$config['index_page'] = 'index.php';
 
-to
+to:
 
 	$config['index_page'] = '';
 
@@ -61,7 +74,7 @@ When you download the *wiredesignz* HMVC modular extension for the *codeigniter*
 When you download the *wiredesignz* HMVC modular extension for the *codeigniter* framework you will find a *third_party* folder which contains an additional folder name *MX*. This *MX* folder has been copied to the *thid_party* folder within the *application* folder of the *codeigniter* framework.
 
 ### application/third_party/MX/loader.php
-Swapped out line 300 as shown below. You can find more info about this change here: http://stackoverflow.com/questions/41557760/codeigniter-hmvc-object-to-array-error
+Swapped out line 300 as shown below. You can find more info about this change [here:](http://stackoverflow.com/questions/41557760/codeigniter-hmvc-object-to-array-error)
 
 #### original
     return $this->_ci_load(array('_ci_view' => $view, '_ci_vars' => $this->_ci_object_to_array($vars), '_ci_return' => $return));
